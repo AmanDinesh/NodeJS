@@ -23,7 +23,9 @@ dishRouter.route('/')
 })
 .delete((req, res, next) => {
     res.end('Deleting all the dishes');
-})
+});
+
+dishRouter.route('/:dishId')
 .get((req, res, next) => {
     res.end('Will send details of the dish: ' + req.params.dishId + ' to you!');
 })
@@ -33,7 +35,7 @@ dishRouter.route('/')
 })
 .put((req, res, next) => {
     res.write('Updating the dish: ' + req.params.dishId + '\n');
-    res.end('Will update the dish: ' + req.body.name + ' with details: ' + req.body.description);
+    res.end('Will update the dish: ' + req.body.name + ' with details: ' + req.body.description); 
 })
 .delete((req, res, next) => {
     res.end('Deleting dish: ' + req.params.dishId);
